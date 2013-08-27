@@ -9,7 +9,15 @@ EmberRailsExample.TodosController = Ember.ArrayController.extend
     todo.save()
 
 EmberRailsExample.TodoController = Ember.ObjectController.extend
+  isEditing: false
   removeTodo: ->
     todo = this.get('model')
     todo.deleteRecord()
     todo.save()
+
+  editTodo: ->
+    this.set('isEditing', true)
+
+  acceptChanges: ->
+    this.set('isEditing', false)
+    this.get('model').save()

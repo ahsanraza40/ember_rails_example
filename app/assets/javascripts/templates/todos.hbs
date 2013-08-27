@@ -3,8 +3,13 @@
 <button {{action 'createTodo'}}>登録する</button>
 <ul>
 {{#each controller itemController="todo"}}
-    <li>{{content.content}}
-      <button {{action "removeTodo"}} class="destroy">削除</button>
+    <li {{bindAttr class="isCompleted:completed isEditing:editing"}}>
+        {{#if isEditing}}
+            {{view EmberRailsExample.EditTodoView valueBinding="content.content"}}
+        {{else}}
+            <label {{action "editTodo" on="doubleClick"}}>{{content.content}}</label>
+            <button {{action "removeTodo"}} class="destroy">削除</button>
+        {{/if}}
     </li>
 {{else}}
     <li>まだありません。</li>
