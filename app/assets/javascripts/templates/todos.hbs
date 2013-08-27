@@ -1,4 +1,6 @@
 <h1>Todos</h1>
+{{ view Ember.TextField id="new-todo" placeholder="何をする？" valueBinding="newContent"}}
+<button {{action 'createTodo'}}>登録する</button>
 <ul>
 {{#each todo in controller}}
     <li>{{todo.content}}</li>
