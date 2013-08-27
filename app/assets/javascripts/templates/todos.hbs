@@ -1,0 +1,10 @@
+<h1>Todos</h1>
+<ul>
+{{#each todo in controller}}
+    <li>{{todo.content}}</li>
+{{else}}
+    <li>まだありません。</li>
+{{/each}}
+</ul>
+
+{{outlet}}
