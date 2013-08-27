@@ -7,3 +7,9 @@ EmberRailsExample.TodosController = Ember.ArrayController.extend
     })
     this.set('newContent', '')
     todo.save()
+
+EmberRailsExample.TodoController = Ember.ObjectController.extend
+  removeTodo: ->
+    todo = this.get('model')
+    todo.deleteRecord()
+    todo.save()

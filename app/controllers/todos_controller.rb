@@ -47,6 +47,21 @@ class TodosController < ApplicationController
     end
   end
 
+  def destroy
+    @todo = Todo.find(params[:id])
+    if @todo
+      @todo.destroy
+      #respond_with @todo
+      respond_to do |format|
+        format.json { render :json => {} }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: {error: 404} }
+      end
+    end
+  end
+
   private
     def todo_params
       params[:todo].permit(:content)
