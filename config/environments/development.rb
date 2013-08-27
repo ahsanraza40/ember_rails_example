@@ -34,4 +34,8 @@ EmberRailsExample::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Ember.js settings
+  config.eager_load = false
+  config.ember.variant = :development
 end
