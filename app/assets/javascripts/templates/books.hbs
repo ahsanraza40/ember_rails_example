@@ -1,0 +1,19 @@
+<h1>Books</h1>
+{{ view Ember.TextField id="new-book" placeholder="本を登録" valueBinding="newTitle"}}
+<button {{action 'createBook'}}>登録する</button>
+<ul>
+{{#each controller itemController="book"}}
+    <li {{bindAttr class="isCompleted:completed isEditing:editing"}}>
+        {{#if isEditing}}
+            {{view EmberRailsExample.EditBookView valueBinding="content.title"}}
+        {{else}}
+            <label {{action "editBook" on="doubleClick"}}>{{content.title}}</label>
+            <button {{action "removeBook"}} class="destroy">削除</button>
+        {{/if}}
+    </li>
+{{else}}
+    <li>まだありません。</li>
+{{/each}}
+</ul>
+
+{{books_outlet}}
