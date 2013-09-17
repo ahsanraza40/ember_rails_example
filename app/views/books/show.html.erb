@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Over image:</strong>
-  <%= @book.cover_image %>
+  <strong>Cover image:</strong>
+  <%= image_tag @book.cover_image %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
