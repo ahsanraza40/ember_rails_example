@@ -1,4 +1,6 @@
 EmberRailsExample::Application.routes.draw do
+  resources :books
+
   root to: 'home#index'
   resources :todos
 
