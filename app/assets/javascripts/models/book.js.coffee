@@ -4,4 +4,4 @@ EmberRailsExample.Book = DS.Model.extend
   title: DS.attr 'string'
   author: DS.attr 'string'
   releasedOn: DS.attr 'date'
-  overImage: DS.attr 'string'
+  coverImage: DS.attr 'string'
