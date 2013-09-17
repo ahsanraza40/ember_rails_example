@@ -43,3 +43,6 @@ end
 
 gem 'ember-rails'
 gem 'ember-source'
+
+gem 'carrierwave'
+gem 'remotipart', '~> 1.2'
